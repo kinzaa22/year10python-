@@ -1,1 +1,79 @@
+# DICE GAME CODE
+import random
+
+print("the dice game!!")
+user1 = input("player1 whats ur name?")
+user2 = input("player2 whats ur name?")
+player1 = 0
+player2 = 0
+
+
+def dice():
+    num = random.randint(1, 6)
+    # print(num)
+    return num
+
+
+for I in range(5):  # player1
+    score = dice() + dice()
+
+    if score % 2 == 0:
+        score = score + 10
+        print(user1, "score is even so you get 10 extra points")
+    else:
+        score = score - 5
+        print(user1, "score is odd so you get 5 minused from original score")
+        print(user1, "has scored", score)
+
+
+def dice():
+    num = random.randint(1, 6)
+    # print(num)
+    return num
+
+
+for I in range(5):  # player2
+    score2 = dice() + dice()
+    if score2 % 2 == 0:
+        score2 = score2 + 10
+        print(user2, "score is even so you get 10 extra points")
+    else:
+        score2 = score2 - 5
+        print(user2, "score is odd so you get 5 minused from original score")
+        print(user2, "has scored", score2)
+
+
+def dice():
+    num = random.randint(1, 6)
+    print(num)
+    return num
+
+
+print(user1, "score is", score)
+print(user2, "score is", score2)
+
+if score > score2:
+    print(user1, "is the winner!!")
+elif score2 > score:
+    print(user2, "is the winner!!")
+
+
+else:
+    print("its a tie after 5 rounds! need to break this tie")
+    while True:
+        score1die = random.randint(1, 6)
+        score2die = random.randint(1, 6)
+        print(user1, "rolls", score1die)
+        print(user2, "rolls", score2die)
+
+        if score1die > score2die:
+            print(user1, "wins the tie breakerr")
+            break
+        elif score2die > score1die:
+            print(user2, "wins the tie breakerr")
+            break
+print("game has ended.")
+
+
+
 
